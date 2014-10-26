@@ -5,7 +5,7 @@
 
 <h2>Categories with products:</h3>
 
-<% Category.all.each do |category| %>
+<% categories.each do |category| %>
 <h3><%= category.name %></h3>
 <table>
   <thead>
@@ -21,7 +21,7 @@
   <% category.products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.price %></td>
+        <td><%= printable_price(product.price) %></td>
         <td><%= product.category %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
